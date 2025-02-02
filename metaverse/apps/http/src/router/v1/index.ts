@@ -11,8 +11,6 @@ import { JWT_SECRET } from "../../config";
 export const router = Router();
 
 router.post("/signup", async (req, res) => {
-    console.log("inside signup")
-    // check the user
     const parsedData = SignupSchema.safeParse(req.body)
     if (!parsedData.success) {
         console.log("parsed data incorrect")
@@ -34,7 +32,6 @@ router.post("/signup", async (req, res) => {
             userId: user.id
         })
     } catch(e) {
-        console.log("erroer thrown")
         console.log(e)
         res.status(400).json({message: "User already exists"})
     }
