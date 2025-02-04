@@ -33,7 +33,6 @@ spaceRouter.post("/", userMiddleware, async (req, res) => {
             height: true
         }
     })
-    console.log("after")
     if (!map) {
         res.status(400).json({message: "Map not found"})
         return
@@ -60,7 +59,6 @@ spaceRouter.post("/", userMiddleware, async (req, res) => {
         return space;
 
     })
-    console.log("space crated")
     res.json({spaceId: space.id})
 })
 

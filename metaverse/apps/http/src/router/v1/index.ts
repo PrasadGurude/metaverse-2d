@@ -13,7 +13,6 @@ export const router = Router();
 router.post("/signup", async (req, res) => {
     const parsedData = SignupSchema.safeParse(req.body)
     if (!parsedData.success) {
-        console.log("parsed data incorrect")
         res.status(400).json({message: "Validation failed"})
         return
     }
